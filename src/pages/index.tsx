@@ -33,12 +33,12 @@ export default function Home() {
           <ImageViewer
             src="https://storage.googleapis.com/portfolio-photos/bird-watch-lr.jpg"
             alt="Bird Watch"
-            caption=""
+            caption="Bird watching"
           />
           <ImageViewer
             src="https://storage.googleapis.com/portfolio-photos/lunchtime-lr.jpg"
             alt="Lunchtime"
-            caption="The human eye is a good subject."
+            caption="I made a new friend today, he invited me for lunch."
           />
           <ImageViewer
             src="https://storage.googleapis.com/portfolio-photos/family-time-lr.jpg"
