@@ -28,7 +28,27 @@ export default function Home() {
           <ImageViewer
             src="https://storage.googleapis.com/portfolio-photos/renee-eye.jpg"
             alt="Eye Close Up"
+            caption="Hoi hoi"
+          />
+          <ImageViewer
+            src="https://storage.googleapis.com/portfolio-photos/bird-watch-lr.jpg"
+            alt="Bird Watch"
+            caption=""
+          />
+          <ImageViewer
+            src="https://storage.googleapis.com/portfolio-photos/lunchtime-lr.jpg"
+            alt="Lunchtime"
             caption="The human eye is a good subject."
+          />
+          <ImageViewer
+            src="https://storage.googleapis.com/portfolio-photos/family-time-lr.jpg"
+            alt="Family Time"
+            caption="Don't mess with Mama"
+          />
+          <ImageViewer
+            src="https://storage.googleapis.com/portfolio-photos/walking-home-alone-lr.jpg"
+            alt="Walking Home Alone"
+            caption="Walking far from home (See artist Iron and Wine)"
           />
         </Gallery>
       </div>
