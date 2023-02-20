@@ -12,7 +12,8 @@ export default function Home() {
         <title>Photo Gallery</title>
       </Head>
       <div className="min-h-screen min-w-screen w-screen bg-black mx-auto">
-        <h1 className="text-white text-6xl m-12 mb-16">Some of my favorite photos</h1>
+        <h1 className="text-white text-6xl m-12 mb-6">Some of my favorite photos</h1>
+        <h3 className="text-left text-white text-xl ml-12 mt-6 mb-12">Zoom in for details!</h3>
         <Gallery>
           <ImageViewer
             src="https://storage.googleapis.com/portfolio-photos/tarsier-close-up.jpg"
@@ -27,7 +28,7 @@ export default function Home() {
           <ImageViewer
             src="https://storage.googleapis.com/portfolio-photos/renee-eye.jpg"
             alt="Eye Close Up"
-            caption="The human eye is the ultimate subject."
+            caption="The human eye is a good subject."
           />
         </Gallery>
       </div>
