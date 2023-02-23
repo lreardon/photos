@@ -8,7 +8,7 @@ interface ImageViewerProps {
     caption?: string;
     metadata?: {
         iso?: number;
-        ss?: number;
+        ss?: string;
         f?: number;
         lens?: string;
         body?: string;
@@ -33,19 +33,23 @@ export default function ImageViewer(props: ImageViewerProps) {
             <div className='image-container'>
                 <img src={props.src} alt={props.alt ?? ""}/>
             </div>
-            {props.metadata ?
-            <Popover
-                placement="topLeft"
-                arrow={false}
-                content={Metadata}
-                overlayInnerStyle={{backgroundColor: '#151515'}}
-            >
-                <div className="photo-text-container flex justify-between items-center">
-                    <BsInfoSquare className="m-3" color='white'/>
-                    {props.caption ? <div className="caption-container"><p className='caption text-white italic m-3'>{props.caption}</p></div> : null}
+            <div className="photo-text-container flex justify-between items-center">
+                <div className='info-container'>
+                    {props.metadata ?
+                    <Popover
+                        placement="topLeft"
+                        arrow={false}
+                        content={Metadata}
+                        overlayInnerStyle={{backgroundColor: '#151515'}}
+                    >
+                        <BsInfoSquare className="m-3" color='white'/>
+                    </Popover>
+                : null}
                 </div>
-            </Popover>
-            : null}
+                <div className="caption-container">
+                    {props.caption ? <p className='caption text-white italic m-3'>{props.caption}</p> : null}
+                </div>
+            </div>
         </div>
     )
 }
