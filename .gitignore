@@ -5,6 +5,9 @@
 /.pnp
 .pnp.js
 
+# offline development assets
+/public/offline_dev/
+
 # testing
 /coverage
 

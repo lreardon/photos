@@ -33,7 +33,6 @@ export default function ImageViewer(props: ImageViewerProps) {
             <div className='image-container'>
                 <img src={props.src} alt={props.alt ?? ""}/>
             </div>
-            {props.caption ? <div><p className='caption text-white italic'>{props.caption}</p></div> : null}
             {props.metadata ?
             <Popover
                 placement="topLeft"
@@ -41,7 +40,10 @@ export default function ImageViewer(props: ImageViewerProps) {
                 content={Metadata}
                 overlayInnerStyle={{backgroundColor: '#151515'}}
             >
-                <BsInfoSquare color='white'/>
+                <div className="photo-text-container flex justify-between items-center">
+                    <BsInfoSquare className="m-3" color='white'/>
+                    {props.caption ? <div className="caption-container"><p className='caption text-white italic m-3'>{props.caption}</p></div> : null}
+                </div>
             </Popover>
             : null}
         </div>
