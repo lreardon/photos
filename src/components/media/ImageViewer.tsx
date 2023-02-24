@@ -21,14 +21,14 @@ interface ImageMetadata {
 
 export default function ImageViewer(props: ImageViewerProps) {  
     
-    const photoUrlLoader = (src: string) => {
-        return `https://storage.googleapis.com/portfolio-photos/${src}`
+    const photoLoader: ImageLoader = ({ src, width, quality }) => {
+        return `https://storage.googleapis.com/portfolio-photos/${src}?w=${width}&q=${quality || 75}`
       }
     
     return (
         <div className='image-viewer'>
             <div className='image-container aspect-w-4 aspect-h-3' style={{position: 'relative', width: '100%'}}>
-                <img src={photoUrlLoader(props.src)} />
+                <Image loader={photoLoader} src={props.src} alt={props.alt ?? ""} fill style={{objectFit: "contain"}}/>
             </div>
             <div className="photo-text-container flex justify-between items-center">
                 <div className='info-container'>
