@@ -1,7 +1,7 @@
 import React from 'react'
 import { BsInfoSquare } from 'react-icons/bs'
 import { Popover } from 'antd'
-import Image from 'next/image';
+import Image, { ImageLoader } from 'next/image';
 
 interface ImageViewerProps {
     src: string;
@@ -19,11 +19,16 @@ interface ImageMetadata {
     body?: string;
 }
 
-export default function ImageViewer(props: ImageViewerProps) {    
+export default function ImageViewer(props: ImageViewerProps) {  
+    
+    const photoUrlLoader = (src: string) => {
+        return `https://storage.googleapis.com/portfolio-photos/${src}`
+      }
+    
     return (
         <div className='image-viewer'>
             <div className='image-container aspect-w-4 aspect-h-3' style={{position: 'relative', width: '100%'}}>
-                <Image src={props.src} alt={props.alt ?? ""} fill style={{objectFit: "contain"}}/>
+                <img src={photoUrlLoader(props.src)} />
             </div>
             <div className="photo-text-container flex justify-between items-center">
                 <div className='info-container'>
