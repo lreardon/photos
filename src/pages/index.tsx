@@ -36,7 +36,7 @@ export default function Home() {
           <ImageViewer
             src="https://storage.googleapis.com/portfolio-photos/bird-watch-lr.jpg"
             alt="Bird Watch"
-            caption="Bird watching"
+            caption="Juvenile bald eagles chill in a tree, keeping an eye out for food and girls."
             metadata={{lens: 'Tamron A047 70-300mm F/4.5-6.3 Di III RXD'}}
           />
           <ImageViewer
@@ -48,7 +48,7 @@ export default function Home() {
           <ImageViewer
             src="https://storage.googleapis.com/portfolio-photos/family-time-lr.jpg"
             alt="Family Time"
-            caption="Don't mess with Mama"
+            caption="A mother Kodiak brown bear naps on the beach with her three cubs (a third is hidden behind her)."
             metadata={{lens: 'Tamron A047 70-300mm F/4.5-6.3 Di III RXD'}}
           />
           <ImageViewer

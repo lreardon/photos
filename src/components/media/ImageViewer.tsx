@@ -6,28 +6,19 @@ interface ImageViewerProps {
     src: string;
     alt: string;
     caption?: string;
-    metadata?: {
-        iso?: number;
-        ss?: string;
-        f?: number;
-        lens?: string;
-        body?: string;
-    }
+    metadata?: ImageMetadata
 }
 
-export default function ImageViewer(props: ImageViewerProps) {
+interface ImageMetadata {
+    ss?: string;
+    f?: number;
+    iso?: number;
+    mm?: number;
+    lens?: string;
+    body?: string;
+}
 
-    const Metadata = props.metadata ? 
-        <div style={{backgroundColor: '#151515'}}>
-            {Object.entries(props.metadata).map(([k, v]) => {
-                return (
-                    <p className="text-white" key="k">
-                        <em>{k}</em>: <b>{v}</b>
-                    </p>
-                )
-            })}
-        </div> : null
-    
+export default function ImageViewer(props: ImageViewerProps) {    
     return (
         <div className='image-viewer'>
             <div className='image-container'>
@@ -39,7 +30,7 @@ export default function ImageViewer(props: ImageViewerProps) {
                     <Popover
                         placement="topLeft"
                         arrow={false}
-                        content={Metadata}
+                        content={<Metadata {...props.metadata} />}
                         overlayInnerStyle={{backgroundColor: '#151515'}}
                     >
                         <BsInfoSquare className="m-3" color='white'/>
@@ -50,6 +41,25 @@ export default function ImageViewer(props: ImageViewerProps) {
                     {props.caption ? <p className='caption text-white italic m-3'>{props.caption}</p> : null}
                 </div>
             </div>
+        </div>
+    )
+}
+
+function Metadata(props: ImageMetadata) {
+    const orderedMetadataKeys = ['ss', 'f', 'iso', 'mm', 'lens', 'body']
+    const metadataComponents: JSX.Element[] = [];
+
+    for (var prop of orderedMetadataKeys) {
+        const value = props[prop as keyof ImageMetadata]
+        if (value != null) {
+        const metadataComponent = <p className="text-white" key="k"><em>{prop}</em>: <b>{value}</b></p>
+            metadataComponents.push(metadataComponent)
+        }
+    }
+
+    return(
+        <div style={{backgroundColor: '#151515'}}>
+            {metadataComponents}
         </div>
     )
 }
