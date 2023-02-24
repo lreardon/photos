@@ -21,7 +21,7 @@ export default function ImageViewer(props: ImageViewerProps) {
         <div style={{backgroundColor: '#151515'}}>
             {Object.entries(props.metadata).map(([k, v]) => {
                 return (
-                    <p className="text-white">
+                    <p className="text-white" key="k">
                         <em>{k}</em>: <b>{v}</b>
                     </p>
                 )
