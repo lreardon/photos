@@ -1,7 +1,6 @@
 import React from 'react'
 import { BsInfoSquare } from 'react-icons/bs'
 import { Popover } from 'antd'
-import Image from 'next/image';
 
 interface ImageViewerProps {
     src: string;
@@ -22,10 +21,10 @@ interface ImageMetadata {
 export default function ImageViewer(props: ImageViewerProps) {    
     return (
         <div className='image-viewer'>
-            <div className='image-container aspect-w-4 aspect-h-3 w-full relative'>
-                <Image src={props.src} alt={props.alt ?? ""} fill/>
+            <div className='image-container aspect-w-4 aspect-h-3 w-full'>
+                <img src={props.src} alt={props.alt ?? ""}/>
             </div>
-            <div className="photo-text-container flex justify-between items-center object-contain">
+            <div className="photo-text-container flex justify-between items-center">
                 <div className='info-container'>
                     {props.metadata ?
                     <Popover
