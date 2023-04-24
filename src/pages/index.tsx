@@ -1,3 +1,4 @@
+import React from 'react'
 import Head from 'next/head'
 import { Inter } from '@next/font/google'
 import ImageViewer from '@/components/media/ImageViewer'
@@ -70,9 +71,9 @@ export default function Home() {
             metadata={{lens: 'Tamron A047 70-300mm F/4.5-6.3 Di III RXD', ss: '1/1250', f: 6.3, iso: 500, mm: 300 }}
           />
           <ImageViewer
-            src="https://storage.googleapis.com/portfolio-photos/leopard-far.jpg"
+            src="https://storage.googleapis.com/portfolio-photos/leopard-lighter-med.jpg"
             alt="Leopard in Yala National Park"
-            caption="Lucas the leopard makes his afternoon rounds. Maybe a bit too dark, still."
+            caption="Lucas the leopard makes his afternoon rounds."
             metadata={{lens: 'Tamron A047 70-300mm F/4.5-6.3 Di III RXD', ss: '1/1250', f: 6.3, iso: 500, mm: 261 }}
           />
         </Gallery>
