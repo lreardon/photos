@@ -1,5 +1,6 @@
 import Gallery from '@/components/Gallery'
 import ImageViewer from '@/components/ImageViewer'
+import { Lens } from '@/enums/lenses'
 import { Inter } from '@next/font/google'
 import Head from 'next/head'
 
