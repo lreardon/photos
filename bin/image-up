@@ -1,0 +1,41 @@
+#!/bin/bash
+
+# Check if the correct number of arguments are provided
+if [ "$#" -ne 1 ]; then
+    echo "Usage: $0 <input_image>"
+    exit 1
+fi
+
+# Check if ImageMagick is installed
+if ! command -v convert &> /dev/null; then
+    echo "ImageMagick is not installed. Please install it and try again."
+    exit 1
+fi
+
+image_name=$1
+
+get_file_by_name() {
+    local directory="$1"
+    local name="$2"
+    
+	find "$directory" -type f -path "*/$name.jpg" -print -quit
+}
+
+file=$(get_file_by_name "$HOME/photos/edited" $image_name)
+
+echo
+echo "FILE FOUND"
+echo $file
+echo
+
+# Resize the image
+convert $file -resize 640x "./tmp/image-up/$image_name.jpg"
+
+gcloud config set project waterfalls-377403
+
+# Upload the image to the bucket
+
+gcloud storage cp $file gs://portfolio-photos/${image_name}/original.jpg
+gcloud storage cp ./tmp/image-up/$image_name.jpg gs://portfolio-photos/${image_name}/640.jpg
+
+rm ./tmp/image-up/$image_name.jpg
