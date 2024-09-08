@@ -25,7 +25,13 @@ export default function Home() {
 						src="https://storage.googleapis.com/portfolio-photos/vulture-stretch.jpg"
             alt="Vulture Stretch"
             caption="Mindful vulture enjoys morning practice."
-            metadata={{lens: Lens.tamron_70_300, ss: '1/320', f: 2.8, iso: 500, mm: 70 }}
+            metadata={{lens: Lens.tamron_70_300, ss: '1/320', f: 6.3, iso: 1000, mm: 300 }}
+					/>
+					<ImageViewer
+						src="https://storage.googleapis.com/portfolio-photos/the-bushes.jpg"
+            alt="The Bushes"
+            caption="Mindful vulture enjoys morning practice."
+            metadata={{lens: Lens.sony_24_70, ss: '1/4000', f: 2.8, mm: 40 }}
 					/>
           <ImageViewer
             src="https://storage.googleapis.com/portfolio-photos/tarsier-close-up.jpg"
