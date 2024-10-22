@@ -17,9 +17,15 @@ export default function Home() {
         <h3 className="text-left text-white text-xl ml-12 mt-6 mb-12">Zoom in for details!</h3>
         <Gallery>
 					<ImageViewer
+						src="https://storage.googleapis.com/portfolio-photos/peru/hummingbird-framed/original.jpg"
+            alt="Hummingbird Framed"
+            caption="Breakfast time in the jungle."
+            metadata={{lens: Lens.tamron_70_300, ss: '1/400', f: 6.3, iso: 1250, mm: 300 }}
+					/>
+					<ImageViewer
 						src="https://storage.googleapis.com/portfolio-photos/fox-claims-campsite.jpg"
             alt="Fox Claims Campsite"
-            caption="A gregarious fox liked the look of our campsite and decided to lay her claim."
+            caption="A gregarious fox liked the look of our campsite and decided to say hi."
             metadata={{lens: Lens.sony_24_70, ss: '1/320', f: 5.0, iso: 100, mm: 112 }}
 						/>
 					<ImageViewer

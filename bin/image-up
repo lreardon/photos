@@ -28,14 +28,17 @@ echo "FILE FOUND"
 echo $file
 echo
 
-# Resize the image
-convert $file -resize 640x "./tmp/image-up/$image_name.jpg"
+echo "will run command:"
+echo "magick $file -resize 640x \"./tmp/image-up/tmp.jpg\""
 
-gcloud config set project waterfalls-377403
+# Resize the image
+magick $file -resize 640x "./tmp/image-up/tmp.jpg"
+
+gcloud config set project waterfalls-377403 --account=leland6925@gmail.com
 
 # Upload the image to the bucket
 
-gcloud storage cp $file gs://portfolio-photos/${image_name}/original.jpg
-gcloud storage cp ./tmp/image-up/$image_name.jpg gs://portfolio-photos/${image_name}/640.jpg
+gcloud storage cp $file gs://portfolio-photos/${image_name}/original.jpg --account=leland6925@gmail.com
+gcloud storage cp ./tmp/image-up/tmp.jpg gs://portfolio-photos/${image_name}/640.jpg --account=leland6925@gmail.com
 
-rm ./tmp/image-up/$image_name.jpg
+rm ./tmp/image-up/tmp.jpg
